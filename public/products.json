@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Pagani Huayra",
+        "image": "https://i.ibb.co/MsDWb7L/pagani-huayra-bc-roadster-1.jpg",
+        "description": "With its shapely fenders and sprawling rear wing, the Huayra looks like it was built to conquer the racetrack. And much like a race car, it's constructed with an eye on minimizing curb weight. It's made from materials such as carbon-titanium HP62, a substance that's lighter and stronger than standard carbon fiber. The current Huayra is scheduled to be the last of the line. Still, that may change, since Pagani has a history of acquiescing to the requests of private collectors seeking a one-off or limited-edition model. With only 40 production models planned, the Huayra is rare and magnificent.",
+        "price": 340995,
+        "quantity": 9,
+        "supplier": "Gordon Ramsey"
+    },
+    {
+        "name": "Koenigsegg Jesko",
+        "image": "https://i.ibb.co/fXbQgTq/koenigsegg-jesko-2.jpg",
+        "description": "Swedish hypercar maker Koenigsegg made a name for itself with the Agera RS. That model stood as the world's fastest production car, able to hit a top speed of 278 mph. Its replacement is the Jesko, a hypercar cut from the same mold as its supremely impressive predecessor. With its cavernous gills, sinewy haunches, and splayed tail, the Jesko looks fast and fearless. This is modern automotive design. A 1280-hp V-8 provides the muscle, backed up by a state-of-the-art nine-speed transmission that was built in-house. The Jesko starts at roughly $3 million. From what we can tell, this car's talents justify its not-insignificant price.",
+        "price": 30000,
+        "quantity": 15,
+        "supplier": "Darcy Harris"
+    },
+    {
+        "name": "Bentley Continental GT",
+        "image": "https://i.ibb.co/hDd9xpX/2023-bentley-continental-gt-s-coupe-3.jpg",
+        "description": "We can think of few better cars in which to tackle a cross-country drive than the 2023 Bentley Continental GT. This grand touring two-door is offered in both coupe and convertible body styles, both of which offer upper-class styling and sumptuous luxury worthy of their six-figure price. With either the powerful V-8 or W-12 engine under the hood—both are twin-turbocharged—the Conti hustles, and its handling deftly walks the line between comfort and cornering composure. All of Bentley’s best materials including fragrant leather, rich wood, and textured metal trim line the cabin, which is packed with luxury features designed to make the journey relaxing as well as quick. And should you want a bespoke GT outfitted like no other, Bentley can handle that for you, too, through its Mulliner coachbuilding division.",
+        "price": 210000,
+        "quantity": 19,
+        "supplier": "Alexander Arnold"
+    },
+    {
+        "name": "Mercedes-Maybach EQS SUV",
+        "image": "https://i.ibb.co/mGM0kGT/2021-09-02-image-4.jpg",
+        "description": "Ultra-luxury is about to go electric with the Mercedes-Maybach EQS SUV, which was previewed by a concept car at the 2021 Munich auto show. The EQS SUV’s electric powertrain will come standard with all-wheel drive, is said to offer around 370 miles of driving range per charge, and is sure to deliver massive power and acceleration. The concept model was shown with gorgeous 24-inch wheels, flashy exterior styling elements, and a most deluxe cabin featuring faux-fur carpeting, a flower vase, and rose-gold trim. Mercedes tells us that the concept vehicle is a one-off but also representative of what we can expect from the production model. The EQS SUV shares its platform with the electric Benz-branded EQS and EQE sedans.",
+        "price": 190000,
+        "quantity": 17,
+        "supplier": "Harvey Elliot"
+    },
+    {
+        "name": "Rolls-Royce Phantom",
+        "image": "https://i.ibb.co/D7tXwM1/phantom-series-ii-5.jpg",
+        "description": "The Rolls-Royce Phantom is the world’s most recognizable symbol of automotive extravagance and status. Its huge waterfall grille and classic upright proportions convey a simple and singular message: wealth goes here. Or maybe royalty. The 2023 Phantom also stands out in the ultimate-luxury car class for its price, which is hundreds of thousands higher than those of rivals such as the Bentley Flying Spur or the Mercedes-Maybach S-class. We can attest to the fact that slipping behind the Phantom’s wheel—better still, into its back seat through its rear-hinged coach doors—will make you feel like a member of the one-tenth-of-one-percent. To the Phantom’s credit, there’s probably not a more comfortable luxury car on the planet. It wafts down the road, floating serenely over pavement imperfections while pampering its passengers with an array of sumptuous interior materials. Meanwhile, its big V-12 engine hums away nearly silently under the Phantom’s long hood, providing effortless power. There’s seemingly no end to the customization opportunities offered by the factory, either. The only thing missing from the options list is a chauffeur, but that feature is sold separately.",
+        "price": 460000,
+        "quantity": 6,
+        "supplier": "Jack Harrison"
+    },
+    {
+        "name": "Bugatti Divo",
+        "image": "https://i.ibb.co/d6SqGyZ/14bugatti-divo-99leadgallery-6.jpg",
+        "description": "A more exotic-looking and exclusive version of the Bugatti Chiron hypercar, the Divo is a study in aerodynamics. Its name pays homage to French racing driver Albert Divo, who won the prestigious Targa Florio endurance race twice in the 1920s behind the wheel of a Bugatti. True to form, the French automaker has put a cap on production: It will build only 40 examples of the Divo, all of which have been spoken for. Compared with the Chiron, the Divo's key enhancements include an upgraded suspension, additional weight savings, and all kinds of aerodynamic wizardry. While both Bugatti models look outrageous, it's not difficult to tell them apart: If it has a dorsal fin, a carved-up hood, and cheese-grater taillights under an enormous wing, you're looking at the Divo.",
+        "price": 580000,
+        "quantity": 10,
+        "supplier": "Joe Hart"
+    }
+]

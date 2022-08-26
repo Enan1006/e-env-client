@@ -1,10 +1,16 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import { toast } from 'react-toastify';
+
+import Loader from '../Loader/Loader';
 
 
 const Signup = () => {
+    const navigate = useNavigate();
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [
         createUserWithEmailAndPassword,
         user,
@@ -13,17 +19,26 @@ const Signup = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
     const [updateProfile, updating, error] = useUpdateProfile(auth);
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
+    if (loadingEmail || loadingGoogle || updating) {
+        return <Loader></Loader>;
+    }
+
+    if (errorEmail || errorGoogle || error) {
+        toast(`${errorEmail?.message || error?.message || errorGoogle?.message}`)
+    }
     const onSubmit = async (data) => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         console.log(data)
+        navigate('/');
     };
 
     return (
         <div>
 
             <div class="card w-1/2 mx-auto bg-base-100 shadow-xl p-20">
+                <h2 className='text-violet-600 font-bold text-4xl text-center'>Please Signup!</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div>
                         <label class="form-label inline-block mb-2 text-gray-700">Name</label>
@@ -54,7 +69,7 @@ const Signup = () => {
                     </div>
 
                     <div className='mt-5'>
-                        <label class="form-label inline-block mb-2 text-gray-700">Email</label>
+                        <label class="form-label inline-block mb-2 text-gray-700">Password</label>
                         <input {...register("password", {
                             minLength: {
                                 value: 8,
