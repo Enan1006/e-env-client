@@ -1,0 +1,5 @@
+.banner {
+    background-image: url("../../../Images/banner/pexels-mike-b-120049.jpg");
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
