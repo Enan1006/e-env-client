@@ -19,6 +19,7 @@ import SingleItem from './Pages/Inventories/SingleItem/SingleItem';
 import AddItem from './Pages/AddItem/AddItem';
 import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth'
 import MyItem from './Pages/MyItem/MyItem';
+import ManageItem from './Pages/ManageItem/ManageItem';
 
 
 function App() {
@@ -36,6 +37,11 @@ function App() {
         <Route path='/my-item' element={
           <RequireAuth>
             <MyItem />
+          </RequireAuth>
+        }></Route>
+        <Route path='/manage-item' element={
+          <RequireAuth>
+            <ManageItem />
           </RequireAuth>
         }></Route>
         <Route path='/singleItem/:id' element={<SingleItem />}></Route>

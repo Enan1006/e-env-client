@@ -14,7 +14,7 @@ const AddItem = () => {
         console.log(data)
         axios.post('http://localhost:5000/inventories',
             {
-                model: data.model,
+                name: data.model,
                 description: data.description,
                 price: data.price,
                 quantity: data.quantity,

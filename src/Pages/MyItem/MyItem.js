@@ -22,15 +22,15 @@ const MyItem = () => {
         return <Loader />;
     }
     return (
-        <div>
-            <h1>{items.length}</h1>
+        <div className='my-40 mx-20'>
             {
                 items.map(item => <div class="card card-compact w-96 bg-base-100 shadow-xl">
                     <figure><img src={item.image} alt="Shoes" /></figure>
                     <div class="card-body">
                         <h2 class="card-title">{item.model}</h2>
-                        <p>{item.description}</p>
-
+                        <p><strong>Price</strong> {item.price}</p>
+                        <p><strong>Quantity</strong> {item.quantity}</p>
+                        <p><strong>Supplier</strong> {item.supplier}</p>
                     </div>
                 </div>)
             }

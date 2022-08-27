@@ -18,6 +18,7 @@ const Header = () => {
             user
                 ?
                 <div className='md:flex'>
+                    <li><Link to='/manage-item'>Manage Item</Link></li>
                     <li><Link to='/my-item'>My Item</Link></li>
                     <li><Link to='/add-item'>Add Item</Link></li>
                     <li><button onClick={logout} className='bg-red-200 text-red-600'>Logout</button></li>
