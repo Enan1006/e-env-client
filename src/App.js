@@ -12,8 +12,14 @@ import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
 import Signup from './Pages/Shared/Signup/Signup';
 import About from './Pages/About/About';
-import Loader from './Pages/Shared/Loader/Loader';
 import Login from './Pages/Shared/Login/Login';
+import Inventory from './Pages/Inventories/Inventory/Inventory';
+import Inventories from './Pages/Inventories/Inventories/Inventories';
+import SingleItem from './Pages/Inventories/SingleItem/SingleItem';
+import AddItem from './Pages/AddItem/AddItem';
+import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth'
+import MyItem from './Pages/MyItem/MyItem';
+
 
 function App() {
   return (
@@ -21,6 +27,18 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />}></Route>
+        <Route path='/inventories' element={<Inventories />}></Route>
+        <Route path='/add-item' element={
+          <RequireAuth>
+            <AddItem />
+          </RequireAuth>
+        }></Route>
+        <Route path='/my-item' element={
+          <RequireAuth>
+            <MyItem />
+          </RequireAuth>
+        }></Route>
+        <Route path='/singleItem/:id' element={<SingleItem />}></Route>
         <Route path='/about-us' element={<About />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/login' element={<Login />}></Route>
