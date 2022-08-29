@@ -21,6 +21,7 @@ import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth'
 import MyItem from './Pages/MyItem/MyItem';
 import ManageItem from './Pages/ManageItem/ManageItem';
 import Blogs from './Pages/Blogs/Blogs/Blogs';
+import SingleBlog from './Pages/Blogs/SingleBlog/SingleBlog';
 
 
 function App() {
@@ -53,7 +54,7 @@ function App() {
         <Route path='/about-us' element={<About />}></Route>
         <Route path='/blog' element={<Blogs />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
-        <Route path='/blog/:blogId' element={<Signup />}></Route>
+        <Route path='/blog/:blogId' element={<SingleBlog />}></Route>
         <Route path='/login' element={<Login />}></Route>
       </Routes>
       <Footer />

@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Blog from '../Blog/Blog';
 
 const Blogs = () => {
-    const [blogs, setBlog] = useState([]);
+    const [blogs, setBlogs] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/blogs')
             .then(Res => Res.json())
-            .then(data => setBlog(data))
+            .then(data => setBlogs(data))
     }, [])
     return (
         <div className='mx-20 my-40'>
