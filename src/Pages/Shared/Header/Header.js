@@ -12,6 +12,7 @@ const Header = () => {
     const menu = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/about-us'>About</Link></li>
+        <li><Link to='/blog'>Blog</Link></li>
         <li><Link to='/inventories'>Inventories</Link></li>
 
         {
