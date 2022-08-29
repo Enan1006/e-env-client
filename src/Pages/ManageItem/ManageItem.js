@@ -16,7 +16,6 @@ const ManageItem = () => {
         if (confirmation) {
             axios.delete(url)
                 .then(Response => {
-                    // handle success
                     console.log(Response);
                     const remaining = inventories.filter(inventory => inventory._id !== id);
                     setInventories(remaining)

@@ -44,7 +44,11 @@ function App() {
             <ManageItem />
           </RequireAuth>
         }></Route>
-        <Route path='/singleItem/:id' element={<SingleItem />}></Route>
+        <Route path='/singleItem/:id' element={
+          <RequireAuth>
+            <SingleItem />
+          </RequireAuth>
+        }></Route>
         <Route path='/about-us' element={<About />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/login' element={<Login />}></Route>
