@@ -2,12 +2,16 @@ import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 
 
 const AddItem = () => {
     const [user] = useAuthState(auth);
     console.log(user)
+    const navigate = useNavigate();
     const { register, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = (data) => {
 
@@ -23,6 +27,8 @@ const AddItem = () => {
                 user: user.email
             }
         )
+        toast('Items added');
+        navigate('/');
 
     };
 

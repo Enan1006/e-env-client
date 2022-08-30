@@ -1,9 +1,12 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SingleItem = (props) => {
-
-    const { name, image, price, quantity, supplier } = props.car;
+    const navigate = useNavigate();
+    const { _id, name, image, price, quantity, supplier } = props.car;
+    const handleBlog = () => {
+        navigate(`/singleItem/${_id}`)
+    }
     return (
         <div>
             <div class="card card-compact  bg-base-100 shadow-xl">
@@ -14,7 +17,7 @@ const SingleItem = (props) => {
                     <p>Quantity: {quantity}</p>
                     <p>Supplier: {supplier}</p>
                     <div class="card-actions justify-end">
-                        <button class="btn bg-violet-600">Update Stock</button>
+                        <button onClick={handleBlog} class="btn bg-violet-600">Update Stock</button>
                     </div>
                 </div>
             </div>

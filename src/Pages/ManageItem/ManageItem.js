@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import Loader from '../Shared/Loader/Loader';
 
 
 const ManageItem = () => {
+    const [user, loading, error] = useAuthState(auth);
     const [inventories, setInventories] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/inventories')
             .then(Response => Response.json())
             .then(data => setInventories(data))
     }, []);
+
+    if (loading) {
+        return <Loader />
+    }
 
     const handleDelete = (id) => {
         const url = `http://localhost:5000/inventory/${id}`;

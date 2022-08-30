@@ -4,7 +4,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Home from './Pages/Home/Home/Home';
 import {
-  BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -22,6 +21,8 @@ import MyItem from './Pages/MyItem/MyItem';
 import ManageItem from './Pages/ManageItem/ManageItem';
 import Blogs from './Pages/Blogs/Blogs/Blogs';
 import SingleBlog from './Pages/Blogs/SingleBlog/SingleBlog';
+import AddBlog from './Pages/Blogs/Blogs/AddBlog/AddBlog';
+import NotFound from './Pages/Shared/NotFound/NotFound';
 
 
 function App() {
@@ -53,9 +54,11 @@ function App() {
         }></Route>
         <Route path='/about-us' element={<About />}></Route>
         <Route path='/blog' element={<Blogs />}></Route>
+        <Route path='/add-blog' element={<AddBlog />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/blog/:blogId' element={<SingleBlog />}></Route>
         <Route path='/login' element={<Login />}></Route>
+        <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <Footer />
       <ToastContainer />

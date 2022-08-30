@@ -23,25 +23,27 @@ const MyItem = () => {
     }
     return (
         <div className='my-40 mx-20'>
-            {
-                items.length > 0
-                    ?
-                    <>
-                        {
-                            items.map(item => <div class="card card-compact w-96 bg-base-100 shadow-xl">
-                                <figure><img src={item.image} alt="Shoes" /></figure>
-                                <div class="card-body">
-                                    <h2 class="card-title">{item.model}</h2>
-                                    <p><strong>Price</strong> {item.price}</p>
-                                    <p><strong>Quantity</strong> {item.quantity}</p>
-                                    <p><strong>Supplier</strong> {item.supplier}</p>
-                                </div>
-                            </div>)
-                        }
-                    </>
-                    :
-                    <h2 className='text-6xl font-bold text-violet-600'>You haven't uploaded any product yet?</h2>
-            }
+            <div className='my-10'>
+                {
+                    items.length > 0
+                        ?
+                        <div className='my-10 mx-auto'>
+                            {
+                                items.map(item => <div class="card card-compact w-1/2 my-10 bg-base-100 shadow-xl">
+                                    <figure><img src={item.image} alt="Shoes" /></figure>
+                                    <div class="card-body">
+                                        <h2 class="card-title">{item.name}</h2>
+                                        <p><strong>Price:</strong> ${item.price}</p>
+                                        <p><strong>Quantity:</strong> {item.quantity}</p>
+                                        <p><strong>Supplier:</strong> {item.supplier}</p>
+                                    </div>
+                                </div>)
+                            }
+                        </div>
+                        :
+                        <h2 className='text-6xl font-bold text-violet-600'>You haven't uploaded any item yet</h2>
+                }
+            </div>
 
         </div>
     );
