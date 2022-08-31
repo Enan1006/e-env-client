@@ -23,6 +23,7 @@ import Blogs from './Pages/Blogs/Blogs/Blogs';
 import SingleBlog from './Pages/Blogs/SingleBlog/SingleBlog';
 import AddBlog from './Pages/Blogs/Blogs/AddBlog/AddBlog';
 import NotFound from './Pages/Shared/NotFound/NotFound';
+import ResetPass from './Pages/Shared/ResetPass/ResetPass';
 
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/blog/:blogId' element={<SingleBlog />}></Route>
         <Route path='/login' element={<Login />}></Route>
+        <Route path='/reset-password' element={<ResetPass />}></Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <Footer />

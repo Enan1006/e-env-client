@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useLocation, useNavigate } from "react-router-dom";
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { toast } from 'react-toastify';
 
@@ -10,13 +10,18 @@ import Loader from '../Loader/Loader';
 
 const Signup = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const [sendEmailVerification, sendingVerification, errorVerification] = useSendEmailVerification(
+        auth
+    );
     const [
         createUserWithEmailAndPassword,
         user,
         loadingEmail,
         errorEmail,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
     const [updateProfile, updating, error] = useUpdateProfile(auth);
 
@@ -27,11 +32,15 @@ const Signup = () => {
     if (errorEmail || errorGoogle || error) {
         toast(`${errorEmail?.message || error?.message || errorGoogle?.message}`)
     }
+
+
+
     const onSubmit = async (data) => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         console.log(data)
-        navigate('/');
+        toast('Email verification has been sent');
+        navigate(from, { replace: true });
     };
 
     return (

@@ -1,12 +1,14 @@
 import React from 'react';
+import axios from 'axios';
 import { useForm } from "react-hook-form";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useNavigate, useLocation, Link } from "react-router-dom";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Loader from '../Loader/Loader';
+import { data } from 'autoprefixer';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -26,19 +28,22 @@ const Login = () => {
     }
     let from = location.state?.from?.pathname || "/";
     if (userEmail || userGoogle) {
-        navigate(from, { replace: true });
     }
 
-    const onSubmit = (data) => {
-        signInWithEmailAndPassword(data.email, data.password);
-        console.log(data)
+    const onSubmit = async (info) => {
+        await signInWithEmailAndPassword(info.email, info.password);
+        const { data } = await axios.post('http://localhost:5000/login', { email: info.email });
+        localStorage.setItem('accessToken', data.accessToken);
+        navigate(from, { replace: true });
+
     };
     if (errorEmail || errorGoogle) {
         toast(`${errorEmail?.message || errorGoogle?.message}`)
     }
+
     return (
         <div>
-            <div className="card w-1/2 mx-auto bg-base-100 shadow-xl p-20">
+            <div className="card w-4/5 md:w-1/2 mx-auto bg-base-100 shadow-xl p-20">
                 <h2 className='text-violet-600 font-bold text-4xl text-center'>Please Login!</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
 
@@ -73,6 +78,9 @@ const Login = () => {
                         <svg class="mr-2 -ml-1 w-4 h-4" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg>
                         Sign in with Google
                     </button>
+                </div>
+                <div className='mt-5'>
+                    <Link to='/reset-password' className='underline text-violet-600'>Reset Password</Link>
                 </div>
             </div>
             <ToastContainer />
