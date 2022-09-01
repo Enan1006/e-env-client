@@ -4,7 +4,7 @@ import SingleItem from '../SingleItem/SingleItem';
 const FeatureItem = () => {
     const [cars, setCars] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/featurecars')
+        fetch('https://hidden-sands-59060.herokuapp.com/featurecars')
             .then(Response => Response.json())
             .then(data => setCars(data))
     }, []);

@@ -14,7 +14,7 @@ const AddBlog = () => {
             image: data.image,
             description: data.description
         }
-        fetch('http://localhost:5000/blogs', {
+        fetch('https://hidden-sands-59060.herokuapp.com/blogs', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

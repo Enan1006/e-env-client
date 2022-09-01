@@ -9,7 +9,7 @@ const ManageItem = () => {
     const [user, loading, error] = useAuthState(auth);
     const [inventories, setInventories] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/inventories')
+        fetch('https://hidden-sands-59060.herokuapp.com/inventories')
             .then(Response => Response.json())
             .then(data => setInventories(data))
     }, []);
@@ -19,7 +19,7 @@ const ManageItem = () => {
     }
 
     const handleDelete = (id) => {
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://hidden-sands-59060.herokuapp.com/inventory/${id}`;
         const confirmation = window.confirm("Are you sure you want to delete?");
         if (confirmation) {
             axios.delete(url)

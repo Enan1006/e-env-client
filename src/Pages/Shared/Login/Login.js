@@ -32,7 +32,7 @@ const Login = () => {
 
     const onSubmit = async (info) => {
         await signInWithEmailAndPassword(info.email, info.password);
-        const { data } = await axios.post('http://localhost:5000/login', { email: info.email });
+        const { data } = await axios.post('https://hidden-sands-59060.herokuapp.com/login', { email: info.email });
         localStorage.setItem('accessToken', data.accessToken);
         navigate(from, { replace: true });
 

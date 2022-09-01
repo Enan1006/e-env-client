@@ -9,7 +9,7 @@ import HomeBlog from '../Home/HomeBlog/HomeBlog';
 const HomeBlogs = () => {
     const [blogs, setBlogs] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/home-blogs')
+        fetch('https://hidden-sands-59060.herokuapp.com/home-blogs')
             .then(Res => Res.json())
             .then(data => setBlogs(data))
     }, []);

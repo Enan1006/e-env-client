@@ -9,7 +9,7 @@ const SingleItem = () => {
     const [res, setRes] = useState({});
     const [stock, setStock] = useState(false);
     useEffect(() => {
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://hidden-sands-59060.herokuapp.com/inventory/${id}`;
         fetch(url)
             .then(Res => Res.json())
             .then(data => {
@@ -25,7 +25,7 @@ const SingleItem = () => {
             const newQuantity = {
                 quantity: (quantity - 1)
             };
-            const url = `http://localhost:5000/inventory/${id}`;
+            const url = `https://hidden-sands-59060.herokuapp.com/inventory/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -48,7 +48,7 @@ const SingleItem = () => {
         const newQuantity = {
             quantity: parseInt(quantity) + parseInt(amount),
         };
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://hidden-sands-59060.herokuapp.com/inventory/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

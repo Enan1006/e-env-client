@@ -6,7 +6,7 @@ const SingleBlog = () => {
     const navigate = useNavigate();
     const [blog, setBlog] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/blog/${blogId}`
+        const url = `https://hidden-sands-59060.herokuapp.com/blog/${blogId}`
         fetch(url)
             .then(Res => Res.json())
             .then(data => setBlog(data))

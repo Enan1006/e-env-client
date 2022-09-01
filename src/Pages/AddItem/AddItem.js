@@ -16,7 +16,7 @@ const AddItem = () => {
     const onSubmit = (data) => {
 
         console.log(data)
-        axios.post('http://localhost:5000/inventories',
+        axios.post('https://hidden-sands-59060.herokuapp.com/inventories',
             {
                 name: data.model,
                 description: data.description,
